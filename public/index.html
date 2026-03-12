@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作文改词 - 智能作文用词提升工具</title>
+    <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="/shared-global-nav.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 作文改词</h1>
+            <p class="subtitle">智能作文用词提升工具 - 中英文作文都能改</p>
+        </header>
+
+        <main>
+            <!-- 输入区域 -->
+            <section class="input-section">
+                <div class="tabs">
+                    <button class="tab active" data-tab="text">文本输入</button>
+                    <button class="tab" data-tab="image">图片识别</button>
+                </div>
+
+                <!-- 年级选择 -->
+                <div class="grade-selector">
+                    <div class="grade-header">🎓 选择年级</div>
+                    <div class="grade-groups">
+                        <!-- 小学 -->
+                        <div class="grade-group">
+                            <div class="group-title">小学</div>
+                            <div class="grade-buttons">
+                                <button class="grade-btn" data-grade="elementary-3">三年级</button>
+                                <button class="grade-btn" data-grade="elementary-4">四年级</button>
+                                <button class="grade-btn" data-grade="elementary-5">五年级</button>
+                                <button class="grade-btn" data-grade="elementary-6">六年级</button>
+                            </div>
+                        </div>
+                        <!-- 初中 -->
+                        <div class="grade-group">
+                            <div class="group-title">初中</div>
+                            <div class="grade-buttons">
+                                <button class="grade-btn active" data-grade="middle-1">初一</button>
+                                <button class="grade-btn" data-grade="middle-2">初二</button>
+                                <button class="grade-btn" data-grade="middle-3">初三</button>
+                            </div>
+                        </div>
+                        <!-- 高中 -->
+                        <div class="grade-group">
+                            <div class="group-title">高中</div>
+                            <div class="grade-buttons">
+                                <button class="grade-btn" data-grade="high-1">高一</button>
+                                <button class="grade-btn" data-grade="high-2">高二</button>
+                                <button class="grade-btn" data-grade="high-3">高三</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 文本输入 -->
+                <div class="tab-content" id="text-tab">
+                    <textarea
+                        id="essay-input"
+                        placeholder="请粘贴学生作文（支持中文/英文）...\n\n例如（中文）：今天天气很好，我特别开心。\n例如（英文）：I am very happy today. The weather is good."
+                        rows="6"></textarea>
+                </div>
+
+                <!-- 图片上传 -->
+                <div class="tab-content hidden" id="image-tab">
+                    <div class="upload-area" id="upload-area">
+                        <input type="file" id="image-input" accept="image/*" hidden>
+                        <div class="upload-prompt">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p>点击上传或拖拽作文图片</p>
+                            <span class="hint">支持 JPG、PNG 格式</span>
+                        </div>
+                        <img id="preview-image" class="hidden" alt="预览">
+                    </div>
+                </div>
+
+                <button id="analyze-btn" class="btn-primary">
+                    <span class="btn-text">🚀 开始分析</span>
+                    <span class="loader hidden"></span>
+                </button>
+            </section>
+
+            <!-- 结果展示区域 -->
+            <section class="result-section hidden" id="result-section">
+                <h2>📊 分析结果</h2>
+
+                <!-- 原文批注 -->
+                <div class="annotated-text" id="annotated-text"></div>
+
+                <!-- 用词进步清单 -->
+                <div class="vocab-list" id="vocab-list">
+                    <h3>💡 用词进步清单</h3>
+                    <div id="vocab-items"></div>
+                </div>
+
+                <!-- 范文生成 -->
+                <div class="sample-actions">
+                    <button id="generate-sample-btn" class="btn-secondary btn-sample-generate" disabled>✍️ 根据修改建议生成范文</button>
+                </div>
+
+                <!-- 优化范文展示 -->
+                <div class="sample-essay-card hidden" id="sample-essay-card">
+                    <div class="sample-essay-header">
+                        <h3>📘 优化后完整范文</h3>
+                        <button id="copy-sample-btn" class="btn-secondary btn-sample-copy" disabled>📄 复制范文</button>
+                    </div>
+                    <p class="sample-essay-meta" id="sample-essay-meta"></p>
+                    <div class="sample-essay-content" id="sample-essay-content"></div>
+                </div>
+
+                <!-- 导出按钮 -->
+                <div class="export-actions">
+                    <button id="copy-btn" class="btn-secondary">📋 复制清单</button>
+                    <button id="download-btn" class="btn-secondary">💾 下载报告</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by AI | 专为中英文作文教学设计</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+
+  <script src="/shared-global-nav.js" defer></script>
+</body>
+</html>
+

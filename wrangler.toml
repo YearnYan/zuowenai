@@ -1,0 +1,12 @@
+﻿name = "zuowenai"
+main = "worker.js"
+compatibility_date = "2026-03-12"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "public"
+binding = "ASSETS"
+
+[vars]
+OPENAI_BASE_URL = "https://api.linapi.net/v1"
+OPENAI_MODEL = "gemini-3-flash-preview"
