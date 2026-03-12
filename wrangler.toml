@@ -2,6 +2,7 @@
 main = "worker.js"
 compatibility_date = "2026-03-12"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = true
 
 routes = [
   { pattern = "zuowen.zhinijianli.cn/*", zone_name = "zhinijianli.cn" }
