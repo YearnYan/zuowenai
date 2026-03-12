@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 workers_dev = true
 
 routes = [
-  { pattern = "zuowen.zhinijianli.cn/*", zone_name = "zhinijianli.cn" }
+  { pattern = "zuowen.zhinijianli.cn", custom_domain = true }
 ]
 
 [assets]
