@@ -1,15 +1,15 @@
-﻿name = "zuowenai"
+name = "zuowenai"
 main = "worker.js"
 compatibility_date = "2026-03-12"
 compatibility_flags = ["nodejs_compat"]
 workers_dev = true
 
 routes = [
-  { pattern = "zuowen.zhinijianli.cn", custom_domain = true }
+  { pattern = "zuowen.gongtouai.top", custom_domain = true }
 ]
 
 [assets]
-directory = "public"
+directory = "dist"
 binding = "ASSETS"
 
 [vars]
